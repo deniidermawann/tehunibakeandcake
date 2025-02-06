@@ -8,7 +8,7 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Menengahkan konten di dalam header */
     align-items: center;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
     padding: 20px 40px;
@@ -18,6 +18,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    justify-content: center; /* Menengahkan logo dan nama toko */
 }
 
 .brand-logo {
@@ -30,6 +31,7 @@ h1 {
     font-size: 24px;
     color: white;
     text-transform: uppercase;
+    margin: 0; /* Menghapus margin dari h1 untuk penyusunan yang lebih rapi */
 }
 
 .nav-links {
