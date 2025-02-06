@@ -98,7 +98,26 @@ p {
     color: #555;
 }
 
-/* Scrollbar Styling */
+/* **Footer (Instagram Logo di Tengah)** */
+footer {
+    display: flex;
+    justify-content: center; /* Agar logo Instagram ada di tengah */
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+}
+
+.instagram-logo {
+    width: 50px; /* Ukuran logo */
+    height: 50px;
+}
+
+.instagram-logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* **Scrollbar Styling** */
 .menu-container::-webkit-scrollbar {
     height: 8px;
 }
