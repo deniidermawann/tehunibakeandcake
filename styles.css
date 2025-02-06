@@ -8,30 +8,11 @@ body {
 
 header {
     display: flex;
-    justify-content: center; /* Menengahkan konten di dalam header */
+    justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
     padding: 20px 40px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Menengahkan logo dan nama toko */
-}
-
-.brand-logo {
-    max-width: 40px;  /* Ukuran maksimal logo */
-    height: auto;     /* Menjaga proporsi logo */
-    margin-right: 10px; /* Jarak antara logo dan teks */
-}
-
-h1 {
-    font-size: 24px;
-    color: white;
-    text-transform: uppercase;
-    margin: 0; /* Menghapus margin dari h1 untuk penyusunan yang lebih rapi */
 }
 
 .nav-links {
@@ -70,40 +51,39 @@ p {
     line-height: 1.6;
 }
 
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    color: white;
-    background: #ff7e5f;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+/* **Scroll Menu** */
+.menu-container {
+    display: flex;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal */
+    gap: 20px;
+    padding: 20px;
+    white-space: nowrap; /* Menjaga elemen tetap dalam satu baris */
+    scroll-behavior: smooth; /* Efek scroll lebih halus */
 }
 
-button:hover {
-    background: #feb47b;
-}
-
-/* Menu Styles */
 .menu-item {
+    min-width: 300px; /* Ukuran minimum agar terlihat per kartu */
+    flex-shrink: 0;
     background-color: #fff;
     padding: 20px;
-    margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
 }
 
 .menu-item h3 {
     color: #ff7e5f;
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 .menu-item p {
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
     margin-bottom: 10px;
 }
@@ -114,21 +94,21 @@ button:hover {
 }
 
 .menu-item ul li {
-    font-size: 18px;
+    font-size: 16px;
     color: #555;
 }
 
-/* CSS untuk menempatkan logo Instagram di tengah */
-.social-media {
-    text-align: center; /* Memastikan logo ada di tengah */
-    margin-top: 20px;
+/* Scrollbar Styling */
+.menu-container::-webkit-scrollbar {
+    height: 8px;
 }
 
-.social-media a {
-    color: #000; /* warna ikon Instagram */
-    text-decoration: none;
+.menu-container::-webkit-scrollbar-thumb {
+    background-color: #ff7e5f;
+    border-radius: 10px;
 }
 
-.social-media i {
-    font-size: 50px; /* Ukuran ikon Instagram */
+.menu-container::-webkit-scrollbar-track {
+    background-color: #ddd;
+    border-radius: 10px;
 }
