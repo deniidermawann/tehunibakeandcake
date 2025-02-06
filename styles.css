@@ -79,3 +79,18 @@ button {
 button:hover {
     background: #feb47b;
 }
+
+/* CSS untuk menempatkan logo Instagram di tengah */
+.social-media {
+    text-align: center; /* Memastikan logo ada di tengah */
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #000; /* warna ikon Instagram */
+    text-decoration: none;
+}
+
+.social-media i {
+    font-size: 50px; /* Ukuran ikon Instagram */
+}
