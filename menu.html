@@ -6,27 +6,40 @@
     <title>Menu - Teh Uni Bake and Cake</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Tambahkan padding agar teks tidak berdempetan */
-        .menu-item {
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-        }
-
-        /* Posisi tombol navigasi */
+        /* Bungkus seluruh menu agar rapi */
         .menu-container-wrapper {
             position: relative;
             overflow: hidden;
             padding: 20px;
         }
 
+        /* Container scrollable */
         .menu-container {
             display: flex;
-            gap: 20px;
+            gap: 30px; /* Tambahkan jarak antar item */
             padding: 10px;
             overflow-x: auto;
             scroll-behavior: smooth;
             white-space: nowrap;
+        }
+
+        /* Desain kotak menu agar tidak berdempetan */
+        .menu-item {
+            flex: 0 0 auto;
+            width: 280px; /* Atur ukuran kotak */
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Gambar menu agar seragam */
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         /* Tombol navigasi */
@@ -34,7 +47,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 10px 15px;
@@ -44,11 +57,11 @@
         }
 
         .prev-btn {
-            left: 0;
+            left: 10px;
         }
 
         .next-btn {
-            right: 0;
+            right: 10px;
         }
     </style>
 </head>
