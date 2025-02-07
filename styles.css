@@ -59,13 +59,15 @@ p {
     line-height: 1.6;
 }
 
-/* **Container Menu (Dua Kolom Kotak-kotak Kiri & Kanan)** */
+/* **Container Menu (Bisa Digeser ke Kiri/Kanan)** */
 .menu-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    display: flex; /* Mengubah dari grid ke flex agar bisa digeser */
     gap: 15px;
     padding: 20px;
-    justify-content: center;
+    overflow-x: auto; /* Scroll horizontal */
+    white-space: nowrap;
+    scroll-snap-type: x mandatory; /* Efek snap saat geser */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling di HP */
 }
 
 /* **Styling untuk Setiap Item Menu** */
@@ -77,8 +79,9 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #ddd;
-    max-width: 280px; /* Ukuran maksimal kotak */
-    margin: 0 auto;
+    width: 280px; /* Ukuran tetap */
+    flex: 0 0 auto; /* Tidak mengecil saat digeser */
+    scroll-snap-align: start; /* Efek snap */
 }
 
 /* Efek Hover */
@@ -90,7 +93,7 @@ p {
 /* Gambar Produk */
 .menu-item img {
     width: 100%;
-    max-width: 200px; /* Lebih kecil */
+    max-width: 200px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -128,7 +131,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Memastikan logo IG benar-benar di tengah */
+    justify-content: center;
     text-align: center;
     padding: 20px;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
@@ -150,17 +153,17 @@ footer {
     height: auto;
 }
 
-/* **Responsif: Saat Layar Kecil, Menu Jadi 1 Kolom & Kotak Menu Diperkecil** */
+/* **Responsif: Menu Bisa Digulir di HP** */
 @media (max-width: 768px) {
     .menu-container {
-        grid-template-columns: 1fr; /* Jadi satu kolom di layar kecil */
+        flex-wrap: nowrap; /* Pastikan tetap horizontal */
     }
 
     .menu-item {
-        max-width: 240px; /* Kotak lebih kecil di HP */
+        width: 240px;
     }
 
     .menu-item img {
-        max-width: 180px; /* Gambar lebih kecil di HP */
+        max-width: 180px;
     }
 }
