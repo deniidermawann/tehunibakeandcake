@@ -5,65 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Teh Uni Bake and Cake</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Bungkus seluruh menu agar rapi */
-        .menu-container-wrapper {
-            position: relative;
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        /* Container scrollable */
-        .menu-container {
-            display: flex;
-            gap: 30px; /* Tambahkan jarak antar item */
-            padding: 10px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            white-space: nowrap;
-        }
-
-        /* Desain kotak menu agar tidak berdempetan */
-        .menu-item {
-            flex: 0 0 auto;
-            width: 280px; /* Atur ukuran kotak */
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* Gambar menu agar seragam */
-        .menu-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        /* Tombol navigasi */
-        .menu-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -85,34 +26,34 @@
         <div class="menu-container">
             <div class="menu-item">
                 <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Fudgy%20Brownies.jpg?raw=true" alt="Fudgy Brownies">
-                <h3>Fudgy Brownies 18x8 (Tekstur Basah)</h3>
-                <p>Tekstur fudgy yang kenyal dan lembut. Cocok untuk pecinta coklat.</p>
+                <h3>Fudgy Brownies 18x8</h3>
+                <p>Kenyal, lembut, dan kaya rasa coklat.</p>
                 <p class="price">Rp 58.000</p>
             </div>
             <div class="menu-item">
                 <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Brownies%20Panggang%20Super%20Moist.jpg?raw=true" alt="Brownies Panggang Super Moist">
                 <h3>Brownies Panggang Super Moist 20x9</h3>
-                <p>Brownies panggang yang super lembut dan manis.</p>
+                <p>Tekstur lembut dan manis.</p>
                 <p class="price">Rp 58.000</p>
             </div>
             <div class="menu-item">
                 <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Schotel.jpg?raw=true" alt="Schotel">
                 <h3>Schotel</h3>
-                <p>Schotel creamy dengan rasa keju yang kuat.</p>
+                <p>Keju creamy yang lezat.</p>
                 <p class="price">200g: Rp 15.000</p>
                 <p class="price">100g: Rp 10.000</p>
             </div>
             <div class="menu-item">
                 <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Fusilli%20Carbonara.jpg?raw=true" alt="Fusilli Carbonara">
                 <h3>Fusilli Carbonara</h3>
-                <p>Pasta dengan saus carbonara creamy dan gurih.</p>
+                <p>Saus carbonara creamy dan gurih.</p>
                 <p class="price">200g: Rp 20.000</p>
                 <p class="price">100g: Rp 12.500</p>
             </div>
             <div class="menu-item">
                 <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Tiramisu.jpg?raw=true" alt="Classic Tiramisu">
                 <h3>Classic Tiramisu</h3>
-                <p>Tiramisu lembut dengan rasa kopi yang kaya.</p>
+                <p>Lembut dengan sentuhan kopi.</p>
                 <p class="price">150ml: Rp 15.000</p>
                 <p class="price">250ml: Rp 25.000</p>
             </div>
@@ -125,17 +66,14 @@
         const prevBtn = document.querySelector(".prev-btn");
         const nextBtn = document.querySelector(".next-btn");
 
-        // Fungsi untuk geser ke kiri
         prevBtn.addEventListener("click", () => {
             menuContainer.scrollLeft -= 300;
         });
 
-        // Fungsi untuk geser ke kanan
         nextBtn.addEventListener("click", () => {
             menuContainer.scrollLeft += 300;
         });
 
-        // Tambahan: Scroll dengan roda mouse
         menuContainer.addEventListener("wheel", (evt) => {
             evt.preventDefault();
             menuContainer.scrollLeft += evt.deltaY;
