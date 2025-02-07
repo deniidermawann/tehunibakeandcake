@@ -8,11 +8,16 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Memindahkan logo ke kanan */
     align-items: center;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    padding: 20px 40px;
+    padding: 15px 40px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 120px; /* Ukuran lebih proporsional */
+    height: auto;
 }
 
 .nav-links {
@@ -51,41 +56,44 @@ p {
     line-height: 1.6;
 }
 
-/* **Scroll Menu** */
+/* **Etalase Menu Mewah** */
 .menu-container {
     display: flex;
-    overflow-x: auto; /* Mengaktifkan scroll horizontal */
+    overflow-x: auto;
     gap: 20px;
     padding: 20px;
-    white-space: nowrap; /* Menjaga elemen tetap dalam satu baris */
-    scroll-behavior: smooth; /* Efek scroll lebih halus */
+    white-space: nowrap;
+    scroll-behavior: smooth;
 }
 
 .menu-item {
-    min-width: 300px; /* Ukuran minimum agar terlihat per kartu */
+    min-width: 320px; /* Ukuran lebih besar */
     flex-shrink: 0;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #fff, #fce3dc);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid #ff7e5f;
 }
 
 .menu-item:hover {
-    transform: scale(1.05); /* Efek zoom saat hover */
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .menu-item h3 {
     color: #ff7e5f;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 12px;
+    font-weight: bold;
 }
 
 .menu-item p {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 12px;
 }
 
 .menu-item ul {
@@ -96,19 +104,20 @@ p {
 .menu-item ul li {
     font-size: 16px;
     color: #555;
+    font-weight: bold;
 }
 
 /* **Footer (Instagram Logo di Tengah)** */
 footer {
     display: flex;
-    justify-content: center; /* Agar logo Instagram ada di tengah */
+    justify-content: center;
     align-items: center;
     padding: 20px;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
 }
 
 .instagram-logo {
-    width: 50px; /* Ukuran logo */
+    width: 50px;
     height: 50px;
 }
 
