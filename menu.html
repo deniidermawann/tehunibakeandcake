@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Teh Uni Bake and Cake</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tambahkan padding agar teks tidak berdempetan */
+        .menu-item {
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Posisi tombol navigasi */
+        .menu-container-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            gap: 20px;
+            padding: 10px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+        }
+
+        /* Tombol navigasi */
+        .menu-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,6 +68,7 @@
     <p>Berbagai pilihan kue dan makanan dari Teh Uni Bake and Cake.</p>
 
     <div class="menu-container-wrapper">
+        <button class="menu-nav prev-btn">⬅️</button>
         <div class="menu-container">
             <div class="menu-item">
                 <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Fudgy%20Brownies.jpg?raw=true" alt="Fudgy Brownies">
@@ -57,12 +104,28 @@
                 <p class="price">250ml: Rp 25.000</p>
             </div>
         </div>
+        <button class="menu-nav next-btn">➡️</button>
     </div>
 
     <script>
-        document.querySelector('.menu-container-wrapper').addEventListener('wheel', (evt) => {
+        const menuContainer = document.querySelector(".menu-container");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+
+        // Fungsi untuk geser ke kiri
+        prevBtn.addEventListener("click", () => {
+            menuContainer.scrollLeft -= 300;
+        });
+
+        // Fungsi untuk geser ke kanan
+        nextBtn.addEventListener("click", () => {
+            menuContainer.scrollLeft += 300;
+        });
+
+        // Tambahan: Scroll dengan roda mouse
+        menuContainer.addEventListener("wheel", (evt) => {
             evt.preventDefault();
-            document.querySelector('.menu-container').scrollLeft += evt.deltaY;
+            menuContainer.scrollLeft += evt.deltaY;
         });
     </script>
 </body>
