@@ -60,20 +60,15 @@ p {
 }
 
 /* **Container Menu (Bisa Digeser ke Kiri/Kanan)** */
-.menu-wrapper {
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-}
-
 .menu-container {
     display: flex;
-    gap: 15px;
+    gap: 25px; /* Memberi jarak lebih antar item */
+    padding: 20px;
     overflow-x: auto;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 20px 0;
+    position: relative;
 }
 
 /* Tombol Navigasi */
@@ -81,13 +76,12 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
-    border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
+    border-radius: 50%;
     z-index: 10;
 }
 
@@ -104,11 +98,11 @@ p {
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 20px; /* Menambah padding agar tidak terlalu rapat */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #ddd;
-    width: 280px;
+    width: 300px; /* Memberi ukuran yang lebih luas */
     flex: 0 0 auto;
     scroll-snap-align: start;
 }
@@ -131,17 +125,16 @@ p {
 
 /* Nama Produk */
 .menu-item h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* Deskripsi */
 .menu-item p {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    margin-bottom: 12px;
 }
 
 /* Harga Produk */
@@ -152,10 +145,9 @@ p {
 }
 
 .menu-item ul li {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #d32f2f;
-    margin-bottom: 5px;
 }
 
 /* **Footer (Instagram Logo di Tengah Bagian Kontak)** */
@@ -190,9 +182,11 @@ footer {
     .menu-container {
         flex-wrap: nowrap;
     }
+
     .menu-item {
-        width: 240px;
+        width: 260px;
     }
+
     .menu-item img {
         max-width: 180px;
     }
