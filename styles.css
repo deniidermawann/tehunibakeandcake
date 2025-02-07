@@ -47,14 +47,14 @@ header {
 /* Judul */
 h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     color: #ff7e5f;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 p {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     max-width: 800px;
     margin: 20px auto;
     line-height: 1.6;
@@ -70,8 +70,8 @@ p {
 /* Container Menu (Bisa Digeser) */
 .menu-container {
     display: flex;
-    gap: 30px; /* Jarak antar item diperbesar */
-    padding: 20px;
+    gap: 20px; /* Jarak antar item dikurangi */
+    padding: 15px;
     overflow-x: auto;
     white-space: nowrap;
     scroll-snap-type: x proximity;
@@ -88,14 +88,14 @@ p {
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 25px; /* Lebih luas */
+    padding: 20px; /* Lebih kecil */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #ddd;
-    width: 320px; /* Memberi ukuran lebih luas */
+    width: 300px; /* Ukuran lebih kecil */
     flex: 0 0 auto;
     scroll-snap-align: start;
-    margin-bottom: 15px; /* Menambah jarak bawah */
+    margin-bottom: 15px;
 }
 
 /* Efek Hover */
@@ -107,36 +107,36 @@ p {
 /* Gambar Produk */
 .menu-item img {
     width: 100%;
-    max-width: 220px;
+    max-width: 200px;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     object-fit: cover;
 }
 
 /* Nama Produk */
 .menu-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #333;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 /* Deskripsi */
 .menu-item p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #666;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 /* Harga Produk */
 .menu-item ul {
     list-style: none;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .menu-item ul li {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #d32f2f;
 }
@@ -148,15 +148,15 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
 }
 
 /* Styling untuk Logo Instagram */
 .instagram-logo {
-    width: 50px;
-    height: 50px;
-    margin: 10px auto;
+    width: 40px;
+    height: 40px;
+    margin: 8px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,15 +171,15 @@ footer {
 @media (max-width: 768px) {
     .menu-container {
         flex-wrap: nowrap;
-        gap: 20px;
+        gap: 15px;
     }
 
     .menu-item {
-        width: 280px;
-        padding: 20px;
+        width: 260px;
+        padding: 15px;
     }
 
     .menu-item img {
-        max-width: 180px;
+        max-width: 160px;
     }
 }
