@@ -60,14 +60,43 @@ p {
 }
 
 /* **Container Menu (Bisa Digeser ke Kiri/Kanan)** */
-.menu-container {
-    display: flex; /* Mengubah dari grid ke flex agar bisa digeser */
-    gap: 15px;
+.menu-wrapper {
+    position: relative;
+    overflow: hidden;
     padding: 20px;
-    overflow-x: auto; /* Scroll horizontal */
+}
+
+.menu-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
     white-space: nowrap;
-    scroll-snap-type: x mandatory; /* Efek snap saat geser */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling di HP */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+}
+
+/* Tombol Navigasi */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
 }
 
 /* **Styling untuk Setiap Item Menu** */
@@ -75,13 +104,13 @@ p {
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #ddd;
-    width: 280px; /* Ukuran tetap */
-    flex: 0 0 auto; /* Tidak mengecil saat digeser */
-    scroll-snap-align: start; /* Efek snap */
+    width: 280px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
 }
 
 /* Efek Hover */
@@ -96,34 +125,37 @@ p {
     max-width: 200px;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     object-fit: cover;
 }
 
 /* Nama Produk */
 .menu-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 /* Deskripsi */
 .menu-item p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 /* Harga Produk */
 .menu-item ul {
     list-style: none;
     padding: 0;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .menu-item ul li {
     font-size: 1rem;
     font-weight: bold;
     color: #d32f2f;
+    margin-bottom: 5px;
 }
 
 /* **Footer (Instagram Logo di Tengah Bagian Kontak)** */
@@ -156,13 +188,11 @@ footer {
 /* **Responsif: Menu Bisa Digulir di HP** */
 @media (max-width: 768px) {
     .menu-container {
-        flex-wrap: nowrap; /* Pastikan tetap horizontal */
+        flex-wrap: nowrap;
     }
-
     .menu-item {
         width: 240px;
     }
-
     .menu-item img {
         max-width: 180px;
     }
