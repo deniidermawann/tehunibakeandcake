@@ -1,3 +1,4 @@
+/* Reset Style Dasar */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -59,38 +60,27 @@ p {
     line-height: 1.6;
 }
 
-/* **Container Menu (Bisa Digeser ke Kiri/Kanan)** */
+/* **Container Menu** */
+.menu-container-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Container Menu (Bisa Digeser) */
 .menu-container {
     display: flex;
-    gap: 25px; /* Memberi jarak lebih antar item */
+    gap: 30px; /* Jarak antar item diperbesar */
     padding: 20px;
     overflow-x: auto;
     white-space: nowrap;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    position: relative;
 }
 
-/* Tombol Navigasi */
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.carousel-button.left {
-    left: 10px;
-}
-
-.carousel-button.right {
-    right: 10px;
+/* Hilangkan Scrollbar */
+.menu-container::-webkit-scrollbar {
+    display: none;
 }
 
 /* **Styling untuk Setiap Item Menu** */
@@ -98,13 +88,14 @@ p {
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* Menambah padding agar tidak terlalu rapat */
+    padding: 25px; /* Lebih luas */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #ddd;
-    width: 300px; /* Memberi ukuran yang lebih luas */
+    width: 320px; /* Memberi ukuran lebih luas */
     flex: 0 0 auto;
     scroll-snap-align: start;
+    margin-bottom: 15px; /* Menambah jarak bawah */
 }
 
 /* Efek Hover */
@@ -116,7 +107,7 @@ p {
 /* Gambar Produk */
 .menu-item img {
     width: 100%;
-    max-width: 200px;
+    max-width: 220px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -150,7 +141,7 @@ p {
     color: #d32f2f;
 }
 
-/* **Footer (Instagram Logo di Tengah Bagian Kontak)** */
+/* **Footer** */
 footer {
     display: flex;
     flex-direction: column;
@@ -159,7 +150,6 @@ footer {
     text-align: center;
     padding: 20px;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    position: relative;
 }
 
 /* Styling untuk Logo Instagram */
@@ -177,14 +167,16 @@ footer {
     height: auto;
 }
 
-/* **Responsif: Menu Bisa Digulir di HP** */
+/* **Responsif untuk HP** */
 @media (max-width: 768px) {
     .menu-container {
         flex-wrap: nowrap;
+        gap: 20px;
     }
 
     .menu-item {
-        width: 260px;
+        width: 280px;
+        padding: 20px;
     }
 
     .menu-item img {
