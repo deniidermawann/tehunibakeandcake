@@ -8,15 +8,16 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between; /* Memindahkan logo ke kanan */
+    justify-content: center; /* Memusatkan tulisan */
     align-items: center;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
     padding: 15px 40px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .logo img {
-    width: 120px; /* Ukuran lebih proporsional */
+    width: 120px;
     height: auto;
 }
 
@@ -67,7 +68,7 @@ p {
 }
 
 .menu-item {
-    min-width: 320px; /* Ukuran lebih besar */
+    min-width: 320px;
     flex-shrink: 0;
     background: linear-gradient(135deg, #fff, #fce3dc);
     padding: 25px;
@@ -114,29 +115,16 @@ footer {
     align-items: center;
     padding: 20px;
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    text-align: center;
 }
 
 .instagram-logo {
     width: 50px;
     height: 50px;
+    margin: auto;
 }
 
 .instagram-logo img {
     width: 100%;
     height: auto;
-}
-
-/* **Scrollbar Styling** */
-.menu-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.menu-container::-webkit-scrollbar-thumb {
-    background-color: #ff7e5f;
-    border-radius: 10px;
-}
-
-.menu-container::-webkit-scrollbar-track {
-    background-color: #ddd;
-    border-radius: 10px;
 }
