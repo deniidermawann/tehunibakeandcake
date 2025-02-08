@@ -70,7 +70,7 @@ p {
 /* Container Menu (Bisa Digeser) */
 .menu-container {
     display: flex;
-    gap: 20px; /* Jarak antar item dikurangi */
+    gap: 20px;
     padding: 15px;
     overflow-x: auto;
     white-space: nowrap;
@@ -88,11 +88,11 @@ p {
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* Lebih kecil */
+    padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     border: 1px solid #ddd;
-    width: 300px; /* Ukuran lebih kecil */
+    width: 300px;
     flex: 0 0 auto;
     scroll-snap-align: start;
     margin-bottom: 15px;
@@ -139,6 +139,24 @@ p {
     font-size: 1rem;
     font-weight: bold;
     color: #d32f2f;
+}
+
+/* Tombol Order Now */
+.order-now {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 15px;
+    background: #ff7e5f;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.order-now:hover {
+    background: #e06b55;
 }
 
 /* **Footer** */
