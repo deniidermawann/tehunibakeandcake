@@ -62,6 +62,7 @@
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            cursor: pointer;
         }
 
         .menu-nav {
@@ -79,6 +80,34 @@
 
         .prev-btn { left: 10px; }
         .next-btn { right: 10px; }
+
+        .qr-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -104,45 +133,30 @@
                 <h3>Fudgy Brownies</h3>
                 <p>Tekstur fudgy yang kenyal.</p>
                 <p class="price">Rp 58.000</p>
-                <a class="order-button" href="https://wa.me/085157013135?text=Saya%20ingin%20memesan%20Fudgy%20Brownies">Order Now</a>
-            </div>
-            <div class="menu-item">
-                <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Brownies%20Panggang%20Super%20Moist.jpg?raw=true" alt="Brownies Panggang">
-                <h3>Brownies Panggang</h3>
-                <p>Super lembut dan manis.</p>
-                <p class="price">Rp 58.000</p>
-                <a class="order-button" href="https://wa.me/085157013135?text=Saya%20ingin%20memesan%20Brownies%20Panggang">Order Now</a>
-            </div>
-            <div class="menu-item">
-                <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Schotel.jpg?raw=true" alt="Schotel">
-                <h3>Schotel</h3>
-                <p>Rasa keju yang kuat.</p>
-                <p class="price">200g: Rp 15.000 | 100g: Rp 10.000</p>
-                <a class="order-button" href="https://wa.me/085157013135?text=Saya%20ingin%20memesan%20Schotel">Order Now</a>
-            </div>
-            <div class="menu-item">
-                <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Fusilli%20Carbonara.jpg?raw=true" alt="Fusilli Carbonara">
-                <h3>Fusilli Carbonara</h3>
-                <p>Saus carbonara creamy.</p>
-                <p class="price">200g: Rp 20.000 | 100g: Rp 12.500</p>
-                <a class="order-button" href="https://wa.me/085157013135?text=Saya%20ingin%20memesan%20Fusilli%20Carbonara">Order Now</a>
-            </div>
-            <div class="menu-item">
-                <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Tiramisu.jpg?raw=true" alt="Classic Tiramisu">
-                <h3>Classic Tiramisu</h3>
-                <p>Lembut dengan rasa kopi.</p>
-                <p class="price">150ml: Rp 15.000 | 250ml: Rp 25.000</p>
-                <a class="order-button" href="https://wa.me/085157013135?text=Saya%20ingin%20memesan%20Classic%20Tiramisu">Order Now</a>
-            </div>
-            <div class="menu-item">
-                <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/Lasagna.JPG?raw=true" alt="Lasagna">
-                <h3>Lasagna</h3>
-                <p>Lapisan pasta dengan saus gurih.</p>
-                <p class="price">Rp 20.000</p>
-                <a class="order-button" href="https://wa.me/085157013135?text=Saya%20ingin%20memesan%20Lasagna">Order Now</a>
+                <button class="order-button" onclick="showQR('Fudgy Brownies')">Order Now</button>
             </div>
         </div>
         <button class="menu-nav next-btn">➡️</button>
     </div>
+
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-content">
+            <h3>Scan QR untuk Pembayaran</h3>
+            <img src="https://github.com/deniidermawann/tehunibakeandcake/blob/main/QR%20Bayar%20cus.jpeg?raw=true" alt="QR Pembayaran" width="200">
+            <p>Setelah pembayaran, konfirmasi melalui WhatsApp</p>
+            <a href="https://wa.me/085157013135?text=Saya%20sudah%20membayar%20untuk%20pesanan%20Fudgy%20Brownies" class="order-button">Konfirmasi di WhatsApp</a>
+            <button class="close-btn" onclick="closeQR()">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        function showQR(itemName) {
+            document.getElementById('qrModal').style.display = 'flex';
+        }
+
+        function closeQR() {
+            document.getElementById('qrModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
